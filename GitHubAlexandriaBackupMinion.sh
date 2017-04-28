@@ -1,12 +1,11 @@
 #!/bin/bash
-
 source /etc/environment
 
 DOW=$(date +%A)
 
-rm -rf  /backups/old/alexandria_${DOW} && echo "Removing old backup" || echo "No old backup to remove"
+rm -rf  /backups/old/alexandria_backup && echo "Removing old backup" || echo "No old backup to remove"
 
-mv /backups/alexandria_${DOW} /backups/old/ && echo "Moving the old backup to old folder" || echo "No old backup found to move to old folder" 
+mv /backups/alexandria_${DOW} /backups/old/alexandria_backup && echo "Moving the old backup to old folder" || echo "No old backup found to move to old folder" 
 
 git clone --mirror git@github.com:adjetiva/alexandria.git /backups/alexandria_${DOW} && \
 
