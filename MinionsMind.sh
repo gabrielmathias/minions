@@ -7,6 +7,11 @@ function sayFail
 
 }
 
+function sayFearful
+{
+	curl -X POST --data-urlencode "payload={\"channel\":\"#general\",\"username\":\"""$1""\",\"text\":\"""$2""\",\"icon_emoji\":\":fearful:\"}" ${MINIONS_SLACK_WEBHOOK}
+}
+
 function sayWorried
 {
 	curl -X POST --data-urlencode "payload={\"channel\":\"#general\",\"username\":\"""$1""\",\"text\":\"""$2""\",\"icon_emoji\":\":worried:\"}" ${MINIONS_SLACK_WEBHOOK}

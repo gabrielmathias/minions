@@ -1,12 +1,12 @@
 #!/bin/bash
-source ./MinionsMind.sh
+source /home/ubuntu/minions/MinionsMind.sh
 
 if [ ! -d /alexandria-s3-backups/hdfs ]; then
 	s3fs alexandria-backups /alexandria-s3-backups
 fi
 
 if [ -d /alexandria-s3-backups/hdfs ]; then
-	sayWorried "MasterMinion" "S3RsyncMinion! Please do a backup of /hdfs/csv and /hdfs/storage as soon as possible!"
+	sayFearful "MasterMinion" "S3RsyncMinion! Please do a backup of /hdfs/csv and /hdfs/storage as soon as possible!"
 
 	echo -n "before: " >> /alexandria-s3-backups/hdfs_csv_backup.log
 	date >> /alexandria-s3-backups/hdfs_csv_backup.log
