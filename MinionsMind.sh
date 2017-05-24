@@ -7,6 +7,11 @@ function sayFail
 
 }
 
+function masterSay
+{
+	curl -X POST --data-urlencode "payload={\"channel\":\"#general\",\"username\":\"MasterMinion\",\"text\":\"""$1""\",\"icon_emoji\":\":fearful:\"}" ${MINIONS_SLACK_WEBHOOK}
+}
+
 function sayFearful
 {
 	curl -X POST --data-urlencode "payload={\"channel\":\"#general\",\"username\":\"""$1""\",\"text\":\"""$2""\",\"icon_emoji\":\":fearful:\"}" ${MINIONS_SLACK_WEBHOOK}
@@ -20,4 +25,9 @@ function sayWorried
 function sayHappy
 {
 	curl -X POST --data-urlencode "payload={\"channel\":\"#general\",\"username\":\"""$1""\",\"text\":\"""$2"":+1:\",\"icon_emoji\":\":wink:\"}" ${MINIONS_SLACK_WEBHOOK}
+}
+
+function say
+{
+	curl -X POST --data-urlencode "payload={\"channel\":\"#general\",\"username\":\"""$1""\",\"text\":\"""$2""\",\"icon_emoji\":\":wink:\"}" ${MINIONS_SLACK_WEBHOOK}
 }
