@@ -3,7 +3,7 @@ source /etc/environment
 
 function sayFail
 {
-        curl -X POST --data-urlencode "payload={\"channel\":\"#general\",\"username\":\"""$1""\",\"text\":\"FAIL :bangbang::scream:\",\"icon_emoji\":\":hankey:\",\"attachments\":[{\"color\":\"#a6364f\",\"fields\":[{\"title\":\"""$2""\",\"value\":\"""$3""\",\"short\":false}],\"footer\":\"""$4""\"}]}" ${MINIONS_SLACK_WEBHOOK}
+        curl -X POST --data-urlencode "payload={\"channel\":\"#alerts\",\"username\":\"""$1""\",\"text\":\"FAIL :bangbang::scream:\",\"icon_emoji\":\":hankey:\",\"attachments\":[{\"color\":\"#a6364f\",\"fields\":[{\"title\":\"""$2""\",\"value\":\"""$3""\",\"short\":false}],\"footer\":\"""$4""\"}]}" ${MINIONS_SLACK_WEBHOOK}
 
 }
 
